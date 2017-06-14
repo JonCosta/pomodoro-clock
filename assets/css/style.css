@@ -1,0 +1,23 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
+body {
+  background-color: #333;
+  margin-bottom: 50px;
+}
+.block {
+  margin-top: 20px;
+}
+.footer {
+  background-color: #fff;
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+}
+.footer .footer__text {
+  color: #000;
+  margin: 0 auto;
+  padding: 15px 15px;
+  text-align: center;
+}
