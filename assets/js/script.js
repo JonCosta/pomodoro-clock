@@ -1,18 +1,20 @@
 $(function() {
     
-    var time = 1 * 60;
+    var time = 25 * 60;
     setTime(time);
     var refreshIntervalId = '';
 
-    $(".block__btn").click(function() {
+    $(".btn__start").click(function() {
         refreshIntervalId = setInterval( timeFlow, 1000);
     });
 
-    $(".block__stop").click(function() {
+    $(".btn__stop").click(function() {
         clearInterval(refreshIntervalId);
+        var sound = document.getElementById("audio");
+        sound.play();
     });
 
-    $(".block__reset").click(function() {
+    $(".btn__reset").click(function() {
         time = 25 * 60;
         setTime(time);
     })

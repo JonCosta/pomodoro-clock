@@ -13,15 +13,17 @@
     
     <div class="container">
         <div class="jumbotron block">
-            <h1>Pomodoro Clock Test</h1>
+            <h1 class="block__title">Pomodoro Clock</h1>
 
             <h1 class="block__time">
                 25:00
             </h1>
 
-            <button class="btn btn-primary block__btn">Click</button>
-            <button class="btn btn-warning block__stop">Stop</button>
-            <button class="btn btn-danger block__reset">Reset</button>
+            <div class="btn-group btn-group-justified block__group">
+                <a href="#" class="btn btn__start">Start</a>
+                <a href="#" class="btn btn__stop">Stop</a>
+                <a href="#" class="btn btn__reset">Reset</a>
+            </div>
 
         </div>
     </div>
@@ -31,6 +33,8 @@
             Coded with <i class="fa fa-music"></i> by Jonathan Costa - 2017
         </p>
     </footer>
+
+    <audio id="audio" src="http://www.soundjay.com/button/beep-07.wav" autostart="false" ></audio>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="./assets/js/script.js"></script>
