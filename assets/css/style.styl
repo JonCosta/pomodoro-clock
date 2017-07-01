@@ -2,7 +2,7 @@
 
 $color-bg = #05668d
 $color-footer = #f58a07
-$color-jumbo = #d82e2e
+$color-jumbo = #333
 $color-font = #f0f0c9
 $color-start = #4cb944
 $color-stop = #f58a07
@@ -32,18 +32,21 @@ body {
         text-align: center
     }
 
-    @media screen and (max-width: 480px) {
-        .block__title {
-            font-size: 60px
-        }
-    }
-
     .block__time {
         color: $color-font
         font-size: 120px
         font-family: $font-title
         margin: 40px 0
         text-align: center
+    }
+
+    @media screen and (max-width: 480px) {
+        .block__title {
+            font-size: 50px
+        }
+        .block__time {
+            font-size: 70px
+        }
     }
 
     .btn__start,

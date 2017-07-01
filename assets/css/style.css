@@ -8,7 +8,7 @@ body {
   margin-bottom: 50px;
 }
 .block {
-  background-color: #d82e2e;
+  background-color: #333;
   margin-top: 20px;
 }
 .block .block__title {
@@ -17,17 +17,20 @@ body {
   font-size: 80px;
   text-align: center;
 }
-@media screen and (max-width: 480px) {
-  .block .block__title {
-    font-size: 60px;
-  }
-}
 .block .block__time {
   color: #f0f0c9;
   font-size: 120px;
   font-family: 'Baloo Bhaina', cursive;
   margin: 40px 0;
   text-align: center;
+}
+@media screen and (max-width: 480px) {
+  .block .block__title {
+    font-size: 50px;
+  }
+  .block .block__time {
+    font-size: 70px;
+  }
 }
 .block .btn__start,
 .block .btn__stop,

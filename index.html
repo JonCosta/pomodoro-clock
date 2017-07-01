@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
-    
+
     <div class="container">
         <div class="jumbotron block">
             <h1 class="block__title">Pomodoro Clock</h1>
@@ -19,11 +21,42 @@
                 25:00
             </h1>
 
-            <div class="btn-group btn-group-justified block__group">
+            <div class="btn-group btn-group-justified block__controls">
                 <a href="#" class="btn btn__start">Start</a>
                 <a href="#" class="btn btn__stop">Stop</a>
                 <a href="#" class="btn btn__reset">Reset</a>
             </div>
+
+            <div class="row">
+
+                <div class="col-xs-6 col-md-4 block__custom">
+                    <h4>Work time</h4>
+                    <div class="input-group custom__pomo">
+                        <span class="input-group-btn">
+                            <button class="btn btn__minus_pomo">-</button>
+                        </span>
+                        <input type="text" class="form-control input__pomo" value="25" disabled>
+                        <span class="input-group-btn">
+                            <button class="btn btn__plus_pomo">+</button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="col-xs-6 col-md-4 col-offset-md-4 block__custom">
+                    <h4>Break time</h4>
+                    <div class="input-group custom__break">
+                        <span class="input-group-btn">
+                            <button class="btn btn__minus_break">-</button>
+                        </span>
+                        <input type="text" class="form-control input__break" value="5" disabled>
+                        <span class="input-group-btn">
+                            <button class="btn btn__plus_break">+</button>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
 
         </div>
     </div>
@@ -34,9 +67,10 @@
         </p>
     </footer>
 
-    <audio id="audio" src="http://www.soundjay.com/button/beep-07.wav" autostart="false" ></audio>
+    <audio id="audio" src="http://www.soundjay.com/button/beep-07.wav" autostart="false"></audio>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
