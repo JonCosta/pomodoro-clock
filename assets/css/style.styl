@@ -36,7 +36,7 @@ body {
         color: $color-font
         font-size: 120px
         font-family: $font-title
-        margin: 40px 0
+        margin: 20px 0 0 0
         text-align: center
     }
 
@@ -67,6 +67,45 @@ body {
 
     .btn__reset {
         background-color: $color-reset
+    }
+
+}
+
+.radial-progress {
+    $circle-background = #d6dadc
+    $circle-color = #97a71d
+    $circle-size = 120px
+    $transition-length = 1s
+
+    background-color: $circle-background
+    border-radius: 50%
+    height: $circle-size
+    width: $circle-size
+
+    .circle {
+        .mask, .fill {
+            border-radius: 50%
+            height: $circle-size
+            position: absolute
+            width: $circle-size
+        }
+
+        .fill {
+            background-color: $circle-color;
+            transition: -webkit-transform $transition-length;
+            transition: -ms-transform $transition-length;
+            transition: transform $transition-length;
+            -webkit-backface-visibility: hidden            
+        }
+
+        .mask {
+            clip: rect(0px, $circle-size, $circle-size, $circle-size/2);
+            .fill {
+                clip: rect(0px, $circle-size/2, $circle-size, 0px);                
+            }
+        }
+            
+        
     }
 
 }

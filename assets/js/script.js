@@ -98,4 +98,28 @@ $(function () {
         }
     }
 
+    var transform_styles = [
+        '-webkit-transform',
+        '-ms-transform',
+        'transform'];
+
+    var rotation = 180;
+    
+    window.randomize = function (degree) {
+        // var rotation = Math.floor(Math.random() * 180);
+        // var rotation = 180;
+        // rotation -= 1;
+        var fix_rotation = rotation * 2;
+        for (let i in transform_styles) {
+            $(".circle .fill, .circle .mask.full").css(transform_styles[i], 'rotate(' + rotation + 'deg)');
+            $(".circle .fill.fix").css(transform_styles[i], 'rotate('+fix_rotation+'deg)');
+        }
+    }
+
+    setTimeout(window.randomize(180), 200);
+    // setInterval(function () {
+    //     window.randomize(rotation)
+    // }, 1000);
+    $(".radial-progress").click(window.randomize);
+
 });
