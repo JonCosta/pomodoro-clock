@@ -22,9 +22,15 @@
             </h1>
 
             <div class="btn-group btn-group-justified block__controls">
-                <a href="#" class="btn btn__start">Start</a>
-                <a href="#" class="btn btn__stop">Stop</a>
-                <a href="#" class="btn btn__reset">Reset</a>
+                <a href="#" class="btn btn__start">
+                    <i class="fa fa-play" aria-hidden="true"></i> Start
+                </a>
+                <a href="#" class="btn btn__stop">
+                    <i class="fa fa-pause" aria-hidden="true"></i> Stop
+                </a>
+                <a href="#" class="btn btn__reset">
+                    <i class="fa fa-reply" aria-hidden="true"></i> Reset
+                </a>
             </div>
 
             <div class="row">
@@ -60,7 +66,10 @@
         </p>
     </footer>
 
-    <audio id="audio" src="http://www.soundjay.com/button/beep-07.wav" autostart="false"></audio>
+    <audio id="audio__alarm" class="audio" src="https://www.soundjay.com/phone/sounds/telephone-ring-03a.mp3" autostart="false"></audio>
+    <audio id="audio__start" class="audio" src="https://www.soundjay.com/button/sounds/button-6.mp3" autostart="false"></audio>
+    <audio id="audio__stop" class="audio" src="https://www.soundjay.com/button/sounds/button-7.mp3" autostart="false"></audio>
+    <audio id="audio__reset" class="audio" src="https://www.soundjay.com/button/sounds/button-10.mp3" autostart="false"></audio>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="./assets/js/script.js"></script>

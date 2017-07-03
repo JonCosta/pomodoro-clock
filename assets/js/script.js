@@ -9,33 +9,41 @@ $(function () {
     var time = clock[clock.active] * 60;
 
     setTime(time);
-    var refreshIntervalId = '';
+    var refreshIntervalId = false;
+
+    // -------------------------------------------------------
 
     $(".btn__start").click(function () {
+        if (refreshIntervalId) return false;
+        let sound = document.getElementById("audio__start");
+        sound.volume = 0.2; sound.play();
         refreshIntervalId = setInterval(timeFlow, 1000);
     });
 
-    $(".custom__btn").click(function () {
-        let operation = $(this).val().split("-");
-        if (operation[0] == "plus") {
-            plusTime(operation[1]);
-        } else {
-            minusTime(operation[1]);
-        }
-    });
-
     $(".btn__stop").click(function () {
+        if (!refreshIntervalId) return false;
+        let sound = document.getElementById("audio__stop");
+        sound.volume = 0.2; sound.play();
         clearInterval(refreshIntervalId);
-        // var sound = document.getElementById("audio");
-        // sound.play();
+        refreshIntervalId = false;
     });
 
     $(".btn__reset").click(function () {
+        let sound = document.getElementById("audio__reset");
+        sound.volume = 0.2; sound.play();
         clearInterval(refreshIntervalId);
         clock.active = 'pomo';
         time = clock.pomo * 60;
         setTime(time);
     });
+
+    $(".custom__btn").click(function () {
+        if (refreshIntervalId) return false;
+        let operation = $(this).val().split("-");
+        changeTime(operation[1], operation[0]);
+    });
+
+    // ----------------------------------------------------
 
     /**
      * Countdown function that will reduce time by seconds
@@ -44,6 +52,9 @@ $(function () {
         if (time == 0) {
             // If the countdown is finished, stop the countdown
             clearInterval(refreshIntervalId);
+            // Play a sound
+            let alarm = document.getElementById("audio__alarm");
+            alarm.volume = 0.3; alarm.play();
             // Checks the currently active countdown and start a new one
             if (clock.active == 'pomo') {
                 clock.active = 'pause';
@@ -71,24 +82,20 @@ $(function () {
     }
 
     /**
-     * Adds one minute to the custom time input field
-     * @param {String} selector Class of the target input ('pomo' or 'pause')
+     * Customizes countdown values for Work or Break time
+     * @param {String} selector The class (pomo/pause) of the field being changed
+     * @param {String} operation The operation (plus/minus) to run in the clock
      */
-    function plusTime(selector) {
+    function changeTime(selector, operation) {
         let val = parseInt($(".input__" + selector).val());
-        clock[selector] = val + 1;
-        $(".input__" + selector).val(val + 1);
-    }
-
-    /**
-     * Reduces one minute from the custom time input field
-     * @param {String} selector Class of the target input ('pomo' or 'pause')
-     */
-    function minusTime(selector) {
-        let val = parseInt($(".input__" + selector).val());
-        if (val == 1) return false;
-        clock[selector] = val - 1;
-        $(".input__" + selector).val(val - 1);
+        if (val == 1 && operation == 'minus') return false;
+        val = operation == 'plus' ? val + 1 : val - 1;
+        clock[selector] = val;
+        $(".input__" + selector).val(val);
+        if (clock.active == selector) {
+            time = clock[selector] * 60;
+            setTime(time);
+        }
     }
 
 });
