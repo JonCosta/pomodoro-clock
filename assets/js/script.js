@@ -6,8 +6,13 @@ $(function () {
         active: 'pomo'
     };
 
-    var time = clock[clock.active] * 60;
+    var transform_styles = [
+        '-webkit-transform',
+        '-ms-transform',
+        'transform'];
 
+    var time = clock[clock.active] * 60;
+    fillRadial(time);
     setTime(time);
     var refreshIntervalId = false;
 
@@ -32,9 +37,11 @@ $(function () {
         let sound = document.getElementById("audio__reset");
         sound.volume = 0.2; sound.play();
         clearInterval(refreshIntervalId);
+        refreshIntervalId = false;
         clock.active = 'pomo';
         time = clock.pomo * 60;
         setTime(time);
+        fillRadial(time);
     });
 
     $(".custom__btn").click(function () {
@@ -64,9 +71,11 @@ $(function () {
                 time = clock.pomo * 60;
             }
             setTime(time);
+            fillRadial(time);
             refreshIntervalId = setInterval(timeFlow, 1000);
         } else {
             time -= 1;
+            fillRadial(time);
             setTime(time);
         }
     }
@@ -95,31 +104,18 @@ $(function () {
         if (clock.active == selector) {
             time = clock[selector] * 60;
             setTime(time);
+            fillRadial(time);        
         }
     }
 
-    var transform_styles = [
-        '-webkit-transform',
-        '-ms-transform',
-        'transform'];
-
-    var rotation = 180;
-    
-    window.randomize = function (degree) {
+    function fillRadial(time) {
         // var rotation = Math.floor(Math.random() * 180);
-        // var rotation = 180;
-        // rotation -= 1;
+        var rotation = (time * 180) / (clock[clock.active] * 60);
         var fix_rotation = rotation * 2;
         for (let i in transform_styles) {
             $(".circle .fill, .circle .mask.full").css(transform_styles[i], 'rotate(' + rotation + 'deg)');
-            $(".circle .fill.fix").css(transform_styles[i], 'rotate('+fix_rotation+'deg)');
+            $(".circle .fill.fix").css(transform_styles[i], 'rotate(' + fix_rotation + 'deg)');
         }
     }
-
-    setTimeout(window.randomize(180), 200);
-    // setInterval(function () {
-    //     window.randomize(rotation)
-    // }, 1000);
-    $(".radial-progress").click(window.randomize);
 
 });

@@ -8,6 +8,16 @@ $color-start = #4cb944
 $color-stop = #f58a07
 $color-reset = #5390d1
 
+// Radial Progress variables -------
+$circle-background = #f0f0c9
+$circle-color = tomato
+$circle-size = 400px
+$transition-length = 1s
+$inset-size = 330px
+$inset-color = #f0f0c9
+$circle-size-min = 250px
+$inset-size-min = 200px
+
 $font-title = 'Baloo Bhaina', cursive
 
 
@@ -36,7 +46,8 @@ body {
         color: $color-font
         font-size: 120px
         font-family: $font-title
-        margin: 20px 0 0 0
+        margin-top: auto
+        line-height: $inset-size
         text-align: center
     }
 
@@ -46,6 +57,7 @@ body {
         }
         .block__time {
             font-size: 70px
+            line-height: $inset-size-min
         }
     }
 
@@ -55,6 +67,15 @@ body {
         color: $color-font
         font-size: 20px
         padding: 15px 15px        
+    }
+    
+    @media screen and (max-width: 480px) {
+        .btn__start,
+        .btn__stop,
+        .btn__reset {
+            font-size: 15px        
+        }
+
     }
 
     .btn__start {
@@ -72,15 +93,12 @@ body {
 }
 
 .radial-progress {
-    $circle-background = #d6dadc
-    $circle-color = #97a71d
-    $circle-size = 120px
-    $transition-length = 1s
 
     background-color: $circle-background
     border-radius: 50%
     height: $circle-size
     width: $circle-size
+    margin: 0 auto 40px auto
 
     .circle {
         .mask, .fill {
@@ -95,7 +113,7 @@ body {
             transition: -webkit-transform $transition-length;
             transition: -ms-transform $transition-length;
             transition: transform $transition-length;
-            -webkit-backface-visibility: hidden            
+            -webkit-backface-visibility: hidden
         }
 
         .mask {
@@ -104,11 +122,57 @@ body {
                 clip: rect(0px, $circle-size/2, $circle-size, 0px);                
             }
         }
-            
-        
+    }
+    .inset {
+        width: $inset-size
+        height: $inset-size
+        position: absolute
+        margin-left: (($circle-size - $inset-size) / 2)
+        margin-top: (($circle-size - $inset-size) / 2)
+        background-color: $color-jumbo
+        border-radius: 50%
     }
 
-}
+} // endof .radial-progress
+
+@media screen and (max-width: 480px) {
+    
+    .radial-progress {
+
+        height: $circle-size-min
+        width: $circle-size-min
+
+        .circle {
+            .mask, .fill {
+                height: $circle-size-min
+                width: $circle-size-min
+            }
+
+            .fill {
+                background-color: $circle-color;
+                transition: -webkit-transform $transition-length;
+                transition: -ms-transform $transition-length;
+                transition: transform $transition-length;
+            }
+
+            .mask {
+                clip: rect(0px, $circle-size-min, $circle-size-min, $circle-size-min/2);
+                .fill {
+                    clip: rect(0px, $circle-size-min/2, $circle-size-min, 0px);                
+                }
+            }
+        }
+        .inset {
+            background-color: $color-jumbo
+            border-radius: 50%
+            height: $inset-size-min
+            position: absolute
+            margin-left: (($circle-size-min - $inset-size-min) / 2)
+            margin-top: (($circle-size-min - $inset-size-min) / 2)
+            width: $inset-size-min
+        }
+    }
+} // endof media
 
 .audio {
     display: none
@@ -129,3 +193,5 @@ body {
         text-align: center
     }
 }
+
+// stylus -w style.styl -o style.css
