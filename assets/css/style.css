@@ -4,34 +4,46 @@ html {
   position: relative;
 }
 body {
-  background-color: #05668d;
+  background-color: #5b8c5a;
   margin-bottom: 50px;
 }
 .block {
-  background-color: #333;
-  margin-top: 20px;
+  background-color: #1e151a;
+  margin-top: 10px;
+  padding-top: 25px;
 }
 .block .block__title {
   color: #f0f0c9;
   font-family: 'Baloo Bhaina', cursive;
   font-size: 80px;
+  margin-top: 2px;
   text-align: center;
 }
 .block .block__time {
   color: #f0f0c9;
-  font-size: 120px;
   font-family: 'Baloo Bhaina', cursive;
   margin-top: auto;
-  line-height: 330px;
+  line-height: 270px;
   text-align: center;
+}
+.block .block__time .time__min {
+  font-size: 100px;
+}
+.block .block__time .time__sec {
+  font-size: 50px;
 }
 @media screen and (max-width: 480px) {
   .block .block__title {
-    font-size: 50px;
+    font-size: 40px;
   }
   .block .block__time {
-    font-size: 70px;
     line-height: 200px;
+  }
+  .block .block__time .time__min {
+    font-size: 70px;
+  }
+  .block .block__time .time__sec {
+    font-size: 35px;
   }
 }
 .block .btn__start,
@@ -49,79 +61,106 @@ body {
   }
 }
 .block .btn__start {
-  background-color: #4cb944;
+  background-color: #8db438;
 }
 .block .btn__stop {
   background-color: #f58a07;
 }
 .block .btn__reset {
-  background-color: #5390d1;
+  background-color: #931b13;
+}
+.block__custom {
+  color: #f0f0c9;
+  margin-top: 20px;
+  text-align: center;
+}
+.input__pomo,
+.input__pause {
+  width: 50px;
+  text-align: center;
+}
+.custom__title {
+  font-family: 'Baloo Bhaina', cursive;
+  font-size: 30px;
+}
+.custom__btn {
+  background-color: #d66853;
+  font-size: 20px;
+}
+.custom__btn:hover {
+  color: #f0f0c9;
+  background-color: #e29587;
+}
+.custom__btn:active,
+.custom__btn:focus {
+  color: #f0f0c9;
+  background-color: #a83d28;
 }
 .radial-progress {
   background-color: #f0f0c9;
   border-radius: 50%;
-  height: 400px;
-  width: 400px;
-  margin: 0 auto 40px auto;
+  height: 310px;
+  width: 310px;
+  margin: 0 auto 20px auto;
 }
 .radial-progress .circle .mask,
 .radial-progress .circle .fill {
   border-radius: 50%;
-  height: 400px;
+  height: 310px;
   position: absolute;
-  width: 400px;
+  width: 310px;
 }
 .radial-progress .circle .fill {
-  background-color: #ff6347;
-  transition: -webkit-transform 1s;
-  transition: -ms-transform 1s;
-  transition: transform 1s;
+  background-color: #d66853;
+  transition: -webkit-transform 0.5s;
+  transition: -ms-transform 0.5s;
+  transition: transform 0.5s;
   -webkit-backface-visibility: hidden;
 }
 .radial-progress .circle .mask {
-  clip: rect(0px, 400px, 400px, 200px);
+  clip: rect(0px, 310px, 310px, 155px);
 }
 .radial-progress .circle .mask .fill {
-  clip: rect(0px, 200px, 400px, 0px);
+  clip: rect(0px, 155px, 310px, 0px);
 }
 .radial-progress .inset {
-  width: 330px;
-  height: 330px;
+  width: 270px;
+  height: 270px;
   position: absolute;
-  margin-left: 35px;
-  margin-top: 35px;
-  background-color: #333;
+  margin-left: 20px;
+  margin-top: 20px;
+  background-color: #1e151a;
   border-radius: 50%;
 }
 @media screen and (max-width: 480px) {
   .radial-progress {
-    height: 250px;
-    width: 250px;
+    height: 230px;
+    width: 230px;
   }
   .radial-progress .circle .mask,
   .radial-progress .circle .fill {
-    height: 250px;
-    width: 250px;
+    height: 230px;
+    width: 230px;
   }
   .radial-progress .circle .fill {
-    background-color: #ff6347;
-    transition: -webkit-transform 1s;
-    transition: -ms-transform 1s;
-    transition: transform 1s;
+    background-color: #d66853;
+    transition: -webkit-transform 0.5s;
+    transition: -ms-transform 0.5s;
+    transition: transform 0.5s;
   }
   .radial-progress .circle .mask {
-    clip: rect(0px, 250px, 250px, 125px);
+    clip: rect(0px, 230px, 230px, 115px);
   }
   .radial-progress .circle .mask .fill {
-    clip: rect(0px, 125px, 250px, 0px);
+    clip: rect(0px, 115px, 230px, 0px);
   }
   .radial-progress .inset {
-    background-color: #333;
+    background-color: #1e151a;
     border-radius: 50%;
     height: 200px;
     position: absolute;
-    margin-left: 25px;
-    margin-top: 25px;
+    margin-left: 15px;
+    margin-top: 15px;
     width: 200px;
   }
 }
@@ -129,7 +168,7 @@ body {
   display: none;
 }
 .footer {
-  background-color: #f58a07;
+  background-color: #d66853;
   bottom: 0;
   width: 100%;
   position: absolute;

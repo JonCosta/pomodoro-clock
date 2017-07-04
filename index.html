@@ -30,9 +30,10 @@
                     </div>
                 </div>
                 <div class="inset">
-                    <h1 class="block__time">
-                        25:00
-                    </h1>
+                    <div class="block__time">
+                        <span class="time__min">25</span>
+                        <span class="time__sec">00</span>
+                    </div>
                 </div>
             </div>
 
@@ -51,21 +52,26 @@
             <div class="row">
 
                 <div class="col-xs-6 col-md-2 block__custom">
-                    <h4>Work time</h4>
+                    <h4 class="custom__title">Work time</h4>
                     <div class="input-group custom__pomo">
-                        <input type="text" class="form-control input__pomo" value="25" disabled>
-                        <button class="btn custom__btn" value="minus-pomo">-</button>
-                        <button class="btn custom__btn" value="plus-pomo">+</button>
+                        <!--<input type="text" class="form-control input__pomo" value="25" disabled>-->
+                        <h4 class="input__pomo">25</h4>                        
+                        <div class="btn-group">
+                            <button type="button" class="btn custom__btn" value="minus-pomo">-</button>
+                            <button type="button" class="btn custom__btn" value="plus-pomo">+</button>
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-xs-6 col-md-4 col-offset-md-4 block__custom">
-                    <h4>Break time</h4>
+                    <h4 class="custom__title">Break time</h4>
                     <div class="input-group custom__pause">
-                        <input type="text" class="form-control input__pause" value="5" disabled>
-                        <button class="btn custom__btn" value="minus-pause">-</button>
-                        <button class="btn custom__btn" value="plus-pause">+</button>
-
+                        <h4 class="input__pause">5</h4>
+                        <div class="btn-group">
+                            <button type="button" class="btn custom__btn" value="minus-pause">-</button>
+                            <button type="button" class="btn custom__btn" value="plus-pause">+</button>
+                        </div>
+                        <!--<input type="text" class="form-control input__pause" value="5" disabled>-->
                     </div>
                 </div>
 

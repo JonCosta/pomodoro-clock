@@ -87,7 +87,9 @@ $(function () {
     function setTime(time) {
         let minutes = parseInt(time / 60);
         let seconds = time % 60;
-        $(".block__time").html(`${minutes > 9 ? minutes : "0" + minutes}:${seconds > 9 ? seconds : "0" + seconds}`);
+        $(".time__min").html(`${minutes > 9 ? minutes : "0" + minutes}`);
+        $(".time__sec").html(`:${seconds > 9 ? seconds : "0" + seconds}`);
+        // $(".block__time").html(`${minutes > 9 ? minutes : "0" + minutes}:${seconds > 9 ? seconds : "0" + seconds}`);
     }
 
     /**
@@ -96,15 +98,15 @@ $(function () {
      * @param {String} operation The operation (plus/minus) to run in the clock
      */
     function changeTime(selector, operation) {
-        let val = parseInt($(".input__" + selector).val());
+        let val = parseInt($(".input__" + selector).html());
         if (val == 1 && operation == 'minus') return false;
         val = operation == 'plus' ? val + 1 : val - 1;
         clock[selector] = val;
-        $(".input__" + selector).val(val);
+        $(".input__" + selector).html(val);
         if (clock.active == selector) {
             time = clock[selector] * 60;
             setTime(time);
-            fillRadial(time);        
+            fillRadial(time);
         }
     }
 
