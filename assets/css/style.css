@@ -76,16 +76,29 @@ body {
 }
 .input__pomo,
 .input__pause {
-  width: 50px;
+  font-size: 30px;
+  margin: 0 10px;
   text-align: center;
 }
 .custom__title {
   font-family: 'Baloo Bhaina', cursive;
-  font-size: 30px;
+  font-size: 40px;
+}
+@media screen and (max-width: 480px) {
+  .custom__title {
+    font-size: 22px;
+  }
+  .input__pomo,
+  .input__pause {
+    font-size: 22px;
+    margin: 0 5px;
+  }
 }
 .custom__btn {
   background-color: #d66853;
-  font-size: 20px;
+  border-radius: 10%;
+  font-size: 30px;
+  padding: 0 15px;
 }
 .custom__btn:hover {
   color: #f0f0c9;
@@ -95,6 +108,13 @@ body {
 .custom__btn:focus {
   color: #f0f0c9;
   background-color: #a83d28;
+}
+@media screen and (max-width: 480px) {
+  .custom__btn {
+    width: 30px;
+    font-size: 20px;
+    padding: 0 7px;
+  }
 }
 .radial-progress {
   background-color: #f0f0c9;
@@ -163,6 +183,15 @@ body {
     margin-top: 15px;
     width: 200px;
   }
+}
+.flex-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
 }
 .audio {
   display: none;

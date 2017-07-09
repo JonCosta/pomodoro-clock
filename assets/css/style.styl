@@ -112,26 +112,51 @@ body {
 
 .input__pomo,
 .input__pause {
-    width: 50px;
+    font-size: 30px
+    margin: 0 10px
     text-align: center
 }
 
 .custom__title {
     font-family: $font-title
-    font-size: 30px
+    font-size: 40px
+}
+
+@media screen and (max-width: 480px) {
+    .custom__title {
+        font-size: 22px
+    }
+
+    .input__pomo,
+    .input__pause {
+        font-size: 22px
+        margin: 0 5px
+    }
 }
 
 .custom__btn {
     background-color: $color-custom
-    font-size: 20px
+    border-radius: 10%
+    font-size: 30px
+    padding: 0 15px
+
     &:hover {
         color: $color-font
         background-color: lighten($color-custom, 30%)
     }
     &:active,
-    &:focus, {
+    &:focus {
         color: $color-font
         background-color: darken($color-custom, 30%)
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .custom__btn {
+        width: 30px
+        font-size: 20px
+        padding: 0 7px
+        
     }
 }
 
@@ -216,6 +241,17 @@ body {
         }
     }
 } // endof media
+
+.flex-container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+}
+// TODO - ADD A "MEDIA SCREEN AND" TO RESIZE THE TITLES IN MOBILE RES
 
 .audio {
     display: none
