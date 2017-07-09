@@ -1,21 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina');
-
-$color-bg = #5b8c5a
-$color-footer = #d66853
-$color-jumbo = #1e151a
+// Color variables -------
+$color-bg = #084c61
+$color-footer = #d64e33
+$color-jumbo = #363537
 $color-font = #f0f0c9
-$color-start = #8db438
-$color-stop = #f58a07
-$color-reset = #931b13
-$color-custom = #d66853
+$color-start = #2fbf71
+$color-stop = #f18701
+$color-reset = #bc2318
+$color-custom = #d64e33
 
 // Radial Progress variables -------
-$circle-background = #f0f0c9
-$circle-color = #d66853
+$circle-background = #937b63
+$circle-color = #d64e33
 $circle-size = 310px
 $transition-length = 0.5s
 $inset-size = 270px
-$inset-color = #f0f0c9
+$inset-color = #937b63
 $circle-size-min = 230px
 $inset-size-min = 200px
 
@@ -31,7 +31,7 @@ body {
     background-color: $color-bg
     margin-bottom: 50px
 }
-
+// Jumbo settings --------
 .block {
     background-color: $color-jumbo
     margin-top: 10px
@@ -74,6 +74,7 @@ body {
         }
     }
 
+    // Main button settings -------
     .btn__start,
     .btn__stop,
     .btn__reset {
@@ -104,16 +105,10 @@ body {
 
 }
 
+// Custom time block ---------
 .block__custom {
     color: $color-font
     margin-top: 20px
-    text-align: center
-}
-
-.input__pomo,
-.input__pause {
-    font-size: 30px
-    margin: 0 10px
     text-align: center
 }
 
@@ -122,9 +117,18 @@ body {
     font-size: 40px
 }
 
+// Custom time values --------
+.input__pomo,
+.input__pause {
+    font-family: $font-title
+    font-size: 34px
+    margin: 0 10px
+    text-align: center
+}
+
 @media screen and (max-width: 480px) {
     .custom__title {
-        font-size: 22px
+        font-size: 26px
     }
 
     .input__pomo,
@@ -134,6 +138,7 @@ body {
     }
 }
 
+// Buttons to add or decrease custom time ----------
 .custom__btn {
     background-color: $color-custom
     border-radius: 10%
@@ -160,6 +165,7 @@ body {
     }
 }
 
+// Radial Progress Bar --------
 .radial-progress {
 
     background-color: $circle-background
@@ -251,7 +257,6 @@ body {
     -webkit-flex-flow: row wrap;
     justify-content: space-around;
 }
-// TODO - ADD A "MEDIA SCREEN AND" TO RESIZE THE TITLES IN MOBILE RES
 
 .audio {
     display: none
@@ -272,5 +277,3 @@ body {
         text-align: center
     }
 }
-
-// stylus -w style.styl -o style.css

@@ -4,11 +4,11 @@ html {
   position: relative;
 }
 body {
-  background-color: #5b8c5a;
+  background-color: #084c61;
   margin-bottom: 50px;
 }
 .block {
-  background-color: #1e151a;
+  background-color: #363537;
   margin-top: 10px;
   padding-top: 25px;
 }
@@ -61,32 +61,33 @@ body {
   }
 }
 .block .btn__start {
-  background-color: #8db438;
+  background-color: #2fbf71;
 }
 .block .btn__stop {
-  background-color: #f58a07;
+  background-color: #f18701;
 }
 .block .btn__reset {
-  background-color: #931b13;
+  background-color: #bc2318;
 }
 .block__custom {
   color: #f0f0c9;
   margin-top: 20px;
   text-align: center;
 }
-.input__pomo,
-.input__pause {
-  font-size: 30px;
-  margin: 0 10px;
-  text-align: center;
-}
 .custom__title {
   font-family: 'Baloo Bhaina', cursive;
   font-size: 40px;
 }
+.input__pomo,
+.input__pause {
+  font-family: 'Baloo Bhaina', cursive;
+  font-size: 34px;
+  margin: 0 10px;
+  text-align: center;
+}
 @media screen and (max-width: 480px) {
   .custom__title {
-    font-size: 22px;
+    font-size: 26px;
   }
   .input__pomo,
   .input__pause {
@@ -95,19 +96,19 @@ body {
   }
 }
 .custom__btn {
-  background-color: #d66853;
+  background-color: #d64e33;
   border-radius: 10%;
   font-size: 30px;
   padding: 0 15px;
 }
 .custom__btn:hover {
   color: #f0f0c9;
-  background-color: #e29587;
+  background-color: #e28370;
 }
 .custom__btn:active,
 .custom__btn:focus {
   color: #f0f0c9;
-  background-color: #a83d28;
+  background-color: #9a331f;
 }
 @media screen and (max-width: 480px) {
   .custom__btn {
@@ -117,7 +118,7 @@ body {
   }
 }
 .radial-progress {
-  background-color: #f0f0c9;
+  background-color: #937b63;
   border-radius: 50%;
   height: 310px;
   width: 310px;
@@ -131,7 +132,7 @@ body {
   width: 310px;
 }
 .radial-progress .circle .fill {
-  background-color: #d66853;
+  background-color: #d64e33;
   transition: -webkit-transform 0.5s;
   transition: -ms-transform 0.5s;
   transition: transform 0.5s;
@@ -149,7 +150,7 @@ body {
   position: absolute;
   margin-left: 20px;
   margin-top: 20px;
-  background-color: #1e151a;
+  background-color: #363537;
   border-radius: 50%;
 }
 @media screen and (max-width: 480px) {
@@ -163,7 +164,7 @@ body {
     width: 230px;
   }
   .radial-progress .circle .fill {
-    background-color: #d66853;
+    background-color: #d64e33;
     transition: -webkit-transform 0.5s;
     transition: -ms-transform 0.5s;
     transition: transform 0.5s;
@@ -175,7 +176,7 @@ body {
     clip: rect(0px, 115px, 230px, 0px);
   }
   .radial-progress .inset {
-    background-color: #1e151a;
+    background-color: #363537;
     border-radius: 50%;
     height: 200px;
     position: absolute;
@@ -197,7 +198,7 @@ body {
   display: none;
 }
 .footer {
-  background-color: #d66853;
+  background-color: #d64e33;
   bottom: 0;
   width: 100%;
   position: absolute;
